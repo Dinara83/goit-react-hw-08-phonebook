@@ -1,54 +1,41 @@
 import { NavLink } from 'react-router-dom';
+import { useSelector } from 'react-redux';
 
-import css from './nav-bar.module.css';
-import NavbarAuth from './NavBarAuth/NavBarAuth';
+import NavBarAuth from './NavBarAuth/NavBarAuth';
+import NavBarUser from './NavBarUser/NavBarUser';
+
+import { isUserLogin } from 'redux/auth/auth-selectors';
+
+import css from './nav-bar.module.scss';
 
 const getClassName = ({ isActive }) => {
   const className = isActive ? `${css.link} ${css.active}` : css.link;
   return className;
 };
 
-const NavBar = () => {  
-	return (
-	  <header className={css.wrapper}>
-		<ul className={css.menu}>
-		  <li className={css.liContacts}>
-		  <NavLink className={getClassName} to='/important-contacts'>
-		  Important Contacts
-		</NavLink>
-		  </li>
-		  <li className={css.liPhonebook}>
-		  <NavLink className={getClassName} to='/'>
-		  Phonebook
-		</NavLink>
-		  </li>
-		  <li>
-			<NavbarAuth />
-		  </li>
-		</ul>
-	  </header>
-	);
-  };
-  
-// const NavBar = () => {
-//   const elements = items.map(({ id, text, link }) => (
-//     <li key={id}>
-//       <NavLink className={getClassName} to={link}>
-//         {text}
-//       </NavLink>
-//     </li>
-//   ));
+const NavBar = () => {
+  const isLogin = useSelector(isUserLogin);
 
-//   return (
-//     <header className={css.wrapper}>
-//       <ul className={css.menu}>
-//         {elements}
-//         <li>
-//           <NavbarAuth className={getClassName} />
-//         </li>
-//       </ul>
-//     </header>
-//   );
-// };
+  return (
+    <header className={css.wrapper}>
+      <ul className={css.menu}>
+        <li className={css.liContacts}>
+          <NavLink className={getClassName} to="/important-contacts">
+            Important Contacts
+          </NavLink>
+        </li>
+        <li className={css.liPhonebook}>
+          <NavLink className={getClassName} to="/">
+            Phonebook
+          </NavLink>
+        </li>
+        <li>
+          {!isLogin && <NavBarAuth />}
+          {isLogin && <NavBarUser />}
+        </li>
+      </ul>
+    </header>
+  );
+};
 
 export default NavBar;

@@ -3,9 +3,9 @@ import { useDispatch } from 'react-redux';
 
 import { fetchAllContacts } from 'redux/contacts/contacts-operations';
 
-import ContactForm from 'components/PhonebookContact/ContactForm';
-import FilterPhonebook from 'components/FilterPhonebook/FilterPhonebook';
-import ContactList from 'components/Contacts/ContactList';
+import ContactForm from './PhonebookContact/ContactForm';
+import FilterPhonebook from './FilterPhonebook/FilterPhonebook';
+import ContactList from './Contacts/ContactList';
 
 import css from './phonebook.module.css';
 

@@ -3,11 +3,11 @@ import { fetchAddContact } from 'redux/contacts/contacts-operations';
 
 import { useDispatch } from 'react-redux';
 
-import inititialState from './inititialState';
+import initialState from './initialState';
 import css from './contact-form.module.css';
 
 const ContactForm = () => {
-  const [state, setState] = useState({ ...inititialState });
+  const [state, setState] = useState({ ...initialState });
 
   const dispatch = useDispatch();
 
@@ -22,7 +22,7 @@ const ContactForm = () => {
   const handleSubmit = evt => {
     evt.preventDefault();
     dispatch(fetchAddContact({ ...state }));
-    setState({ ...inititialState });
+    setState({ ...initialState });
   };
 
   const { name, phone, newValue, importantContact } = state;

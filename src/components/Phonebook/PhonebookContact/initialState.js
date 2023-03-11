@@ -1,7 +1,7 @@
-const inititialState = {
+const initialState = {
   name: '',
   phone: '',
   importantContact: false,
 };
 
-export default inititialState;
+export default initialState;

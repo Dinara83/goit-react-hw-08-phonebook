@@ -6,11 +6,11 @@ const getClassName = ({ isActive }) => {
 	return className;
   };
   
-const NavbarAuth = () => {
+const NavBarAuth = () => {
 	return (<div className={css.menu}>
 		<NavLink className={getClassName} to="/register">Register</NavLink> 
 		<NavLink className={getClassName} to="/login">Login</NavLink>
 	</div>)
 }
 
-export default NavbarAuth;
+export default NavBarAuth;
