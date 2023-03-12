@@ -19,10 +19,10 @@ const ContactList = () => {
   };
 
   const elements = filterContacts.map(
-    ({ id, name, phone, importantContact }) => (
+    ({ id, name, number, importantContact }) => (
       <li style={{ fontWeight: importantContact ? 'bold' : 'normal' }} key={id}>
         <span className={css.contactsText}>
-          {name}: {phone}
+          {name}: {number}
         </span>
         <button className={css.contactsBtn} onClick={() => onDeleteContact(id)}>
           Delete

@@ -1,9 +1,10 @@
-.wrapper {
-  display: inline-block;
+
+.menuNavBarAuth {
+  list-style: none;
+  display: flex;
   align-items: center;
-  width: 100%;
-  border-color: rgb(197, 197, 197);
-  box-shadow: 0px 5px 4px 0 #06463bac;
+  justify-content: center;
+  padding: 0;
 }
 
 .menu {

@@ -13,10 +13,10 @@ const ImportantContactsPage = () => {
     dispatch(action);
   };
 
-  const elements = contacts.map(({ id, name, phone }) => (
+  const elements = contacts.map(({ id, name, number }) => (
     <li key={id} className={css.contactsItem}>
       <span className={css.contactsText}>
-        {name}: {phone}
+        {name}: {number}
       </span>
       <button
         className={css.contactsBtn}

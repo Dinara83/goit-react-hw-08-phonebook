@@ -1,9 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { signup, login } from './auth-operations';
+import { register, login, current, logout } from './auth-operations';
 
 const initialState = {
   user: {},
-  token: '',
+  token: null,
   isLogin: false,
   loading: false,
   error: null,
@@ -14,18 +14,18 @@ const authSlice = createSlice({
   initialState,
   extraReducers: builder => {
     builder
-      .addCase(signup.pending, state => {
+      .addCase(register.pending, state => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(signup.fulfilled, (state, { payload }) => {
+      .addCase(register.fulfilled, (state, { payload }) => {
         const { user, token } = payload;
         state.loading = false;
         state.user = user;
         state.token = token;
         state.isLogin = true;
       })
-      .addCase(signup.rejected, (state, { payload }) => {
+      .addCase(register.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
       })
@@ -41,6 +41,33 @@ const authSlice = createSlice({
         state.isLogin = true;
       })
       .addCase(login.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      })
+      .addCase(current.pending, state => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(current.fulfilled, (state, { payload }) => {
+        state.loading = false;
+        state.user = payload;
+        state.isLogin = true;
+      })
+      .addCase(current.rejected, (state, { payload }) => {
+        state.loading = false;
+        state.error = payload;
+      })
+      .addCase(logout.pending, state => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(logout.fulfilled, state => {
+        state.loading = false;
+        state.user = {};
+        state.token = null;
+        state.isLogin = false;
+      })
+      .addCase(logout.rejected, (state, { payload }) => {
         state.loading = false;
         state.error = payload;
       });
