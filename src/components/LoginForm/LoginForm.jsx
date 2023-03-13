@@ -1,4 +1,5 @@
 import useForm from 'shared/hooks/useForm';
+import PropTypes from 'prop-types';
 
 import TextField from 'shared/TextField/TextField';
 import Button from 'shared/Button/Button';
@@ -26,5 +27,9 @@ const LoginForm = ({ onSubmit }) => {
     </form>
   );
 };
+
+LoginForm.propTypes = {
+	onSubmit: PropTypes.func.isRequired,
+  };
 
 export default LoginForm;

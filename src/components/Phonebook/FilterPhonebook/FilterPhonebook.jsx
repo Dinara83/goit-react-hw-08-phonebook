@@ -1,11 +1,11 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { setFilter } from 'redux/filter/filter-slice';
-import { getFilter } from 'redux/filter/filter-selectors';
+import { selectFilter } from 'redux/filter/filter-selectors';
 
 import css from './filter-phonebook.module.css';
 
 const FilterPhonebook = () => {
-  const filter = useSelector(getFilter);
+  const filter = useSelector(selectFilter);
   const dispatch = useDispatch();
 
   const changeFilter = ({ target }) => {

@@ -2,10 +2,10 @@ import { Navigate, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { Loader } from 'components/Loader/Loader';
 
-import { getAuth } from 'redux/auth/auth-selectors';
+import { selectAuth } from 'redux/auth/auth-selectors';
 
 const PublicRote = () => {
-  const { isLogin, token } = useSelector(getAuth);
+  const { isLogin, token } = useSelector(selectAuth);
 
   if (!isLogin && token) {
     return <Loader />;

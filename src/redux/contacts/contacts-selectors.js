@@ -1,13 +1,13 @@
-export const getAllContacts = ({ contacts }) => contacts.items;
+export const selectAllContacts = ({ contacts }) => contacts.items;
 
-export const getImportantContacts = ({ contacts }) => {
+export const selectImportantContacts = ({ contacts }) => {
   const onlyImportantContacts = contacts.items.filter(
     ({ importantContact }) => importantContact
   );
   return onlyImportantContacts;
 };
 
-export const getFilteredContacts = ({ contacts, filter }) => {
+export const selectFilteredContacts = ({ contacts, filter }) => {
   if (!filter) {
     return contacts.items;
   }
