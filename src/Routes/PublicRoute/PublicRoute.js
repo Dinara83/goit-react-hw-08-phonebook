@@ -1,5 +1,6 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Loader } from 'components/Loader/Loader';
 
 import { getAuth } from 'redux/auth/auth-selectors';
 
@@ -7,7 +8,7 @@ const PublicRote = () => {
   const { isLogin, token } = useSelector(getAuth);
 
   if (!isLogin && token) {
-    return <p>...loading</p>;
+    return <Loader />;
   }
 
   if (isLogin) {

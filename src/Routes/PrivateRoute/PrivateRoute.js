@@ -1,5 +1,6 @@
 import { Navigate, Outlet } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import { Loader } from 'components/Loader/Loader';
 
 import { getAuth } from 'redux/auth/auth-selectors';
 
@@ -7,11 +8,11 @@ const PrivateRote = () => {
   const { isLogin, token } = useSelector(getAuth);
 
   if (!isLogin && token) {
-    return <p>...loading</p>;
+    return <Loader />;
   }
 
   if (!isLogin && !token) {
-    return <Navigate to="login" />;
+    return <Navigate to="/" />;
   }
 
   return <Outlet />;

@@ -1,7 +1,13 @@
-import Phonebook from "components/Phonebook/Phonebook";
+import PhonebookPage from "pages/PhonebookPage/PhonebookPage";
+import ImportantContactsPage from "pages/ImportantContactsPage/ImportantContactsPage";
 
 const HomePage = () => {
-  return <Phonebook />;
+  return (
+	<>
+  <PhonebookPage />
+  <ImportantContactsPage />
+  </>
+  )
 };
 
 export default HomePage;

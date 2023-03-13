@@ -1,3 +1,20 @@
+.buttonBack {
+	padding: 5px;
+	/* width: 100%; */
+	/* background-color: #92d6caac; */
+}
+
+.btnBack {
+	padding: 2px 12px;
+	/* margin-left: 30px; */
+	cursor: pointer;
+	font-size: 14px;
+	background-color: #c3b1d5;
+	border-radius: 15px 3px;
+	border: rgba(188, 187, 187, 0.5);
+	box-shadow: 0px 0.5px 0.5px 1px rgba(188, 187, 187, 0.5);
+}
+
 .menu {
 	list-style: none;
 	display: flex;

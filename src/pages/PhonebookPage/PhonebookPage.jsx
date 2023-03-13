@@ -3,13 +3,13 @@ import { useDispatch } from 'react-redux';
 
 import { fetchAllContacts } from 'redux/contacts/contacts-operations';
 
-import ContactForm from './PhonebookContact/ContactForm';
-import FilterPhonebook from './FilterPhonebook/FilterPhonebook';
-import ContactList from './Contacts/ContactList';
+import ContactForm from 'components/Phonebook/PhonebookContact/ContactForm';
+import FilterPhonebook from 'components/Phonebook/FilterPhonebook/FilterPhonebook';
+import ContactList from 'components/Phonebook/Contacts/ContactList';
 
 import css from './phonebook.module.css';
 
-const Phonebook = () => {
+const PhonebookPage = () => {
 	const dispatch = useDispatch();
 
 	useEffect(() => {
@@ -27,4 +27,4 @@ const Phonebook = () => {
   );
 };
 
-export default Phonebook;
+export default PhonebookPage;

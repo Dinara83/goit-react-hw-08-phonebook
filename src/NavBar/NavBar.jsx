@@ -32,7 +32,7 @@ const NavBar = () => {
               </NavLink>
             </li>
             <li className={css.liPhonebook}>
-              <NavLink className={getClassName} to="/">
+              <NavLink className={getClassName} to="/contacts">
                 Phonebook
               </NavLink>
             </li>

@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { getImportantContacts } from 'redux/contacts/contacts-selectors';
 import { fetchDeleteContact } from 'redux/contacts/contacts-operations';
+
 import css from './important-contacts-page.module.css';
 
 const ImportantContactsPage = () => {
@@ -8,8 +9,8 @@ const ImportantContactsPage = () => {
 
   const dispatch = useDispatch();
 
-  const handleRemoveContact = id => {
-    const action = fetchDeleteContact(id);
+  const handleRemoveContact = payload => {
+    const action = fetchDeleteContact(payload);
     dispatch(action);
   };
 
