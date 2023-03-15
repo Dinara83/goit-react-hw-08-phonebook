@@ -4,7 +4,7 @@ import { Loader } from 'components/Loader/Loader';
 
 import { selectAuth } from 'redux/auth/auth-selectors';
 
-const PrivateRote = () => {
+const PrivateRoute = () => {
   const { isLogin, token } = useSelector(selectAuth);
 
   if (!isLogin && token) {
@@ -18,4 +18,4 @@ const PrivateRote = () => {
   return <Outlet />;
 };
 
-export default PrivateRote;
+export default PrivateRoute;

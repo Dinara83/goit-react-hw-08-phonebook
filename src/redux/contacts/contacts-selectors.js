@@ -1,10 +1,10 @@
 export const selectAllContacts = ({ contacts }) => contacts.items;
 
 export const selectImportantContacts = ({ contacts }) => {
-  const onlyImportantContacts = contacts.items.filter(
+  const importantContacts = contacts.items.filter(
     ({ importantContact }) => importantContact
   );
-  return onlyImportantContacts;
+  return importantContacts;
 };
 
 export const selectFilteredContacts = ({ contacts, filter }) => {

@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 import { Loader } from 'components/Loader/Loader';
 import { Layout } from './Layout/Layout';
 import PublicRoute from './PublicRoute/PublicRoute';
-import PrivateRote from './PrivateRoute/PrivateRoute';
+import PrivateRoute from './PrivateRoute/PrivateRoute';
 
 const HomePage = lazy(() => import('../pages/HomePage/HomePage'));
 const PhonebookPage = lazy(() =>
@@ -27,7 +27,7 @@ const UserRoutes = () => {
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/login" element={<LoginPage />} />
           </Route>
-          <Route element={<PrivateRote />}>
+          <Route element={<PrivateRoute />}>
             <Route path="/contacts" element={<PhonebookPage />} />
             <Route
               path="/important-contacts"

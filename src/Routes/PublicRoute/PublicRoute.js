@@ -4,7 +4,7 @@ import { Loader } from 'components/Loader/Loader';
 
 import { selectAuth } from 'redux/auth/auth-selectors';
 
-const PublicRote = () => {
+const PublicRoute = () => {
   const { isLogin, token } = useSelector(selectAuth);
 
   if (!isLogin && token) {
@@ -12,10 +12,10 @@ const PublicRote = () => {
   }
 
   if (isLogin) {
-    return <Navigate to="/" />;
+    return <Navigate to="/contacts" />;
   }
 
   return <Outlet />;
 };
 
-export default PublicRote;
+export default PublicRoute;

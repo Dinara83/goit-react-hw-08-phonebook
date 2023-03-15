@@ -8,7 +8,7 @@ export const fetchAllContacts = createAsyncThunk(
       const data = await api.getAllContacts();
       return data;
     } catch ({ response }) {
-      return thunkAPI.rejectWithValue(response.data.message);
+      return thunkAPI.rejectWithValue(response.data);
     }
   }
 );
@@ -20,7 +20,7 @@ export const fetchAddContact = createAsyncThunk(
       const result = await api.addContact(data);
       return result;
     } catch ({ response }) {
-      return rejectWithValue(response.data.message);
+      return rejectWithValue(response.data);
     }
   },
   {
@@ -46,7 +46,7 @@ export const fetchDeleteContact = createAsyncThunk(
       await api.deleteContact(id);
       return id;
     } catch ({ response }) {
-      return rejectWithValue(response.data.message);
+      return rejectWithValue(response.data);
     }
   }
 );
